@@ -10,7 +10,7 @@ public class Streams {
 
     Student student = new Student();
     List<Student> li = student.createStudentList();
-    List<Integer> nums = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+    List<Integer> nums = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 3, 2));
     List<String> names = new ArrayList<>(Arrays.asList("messi", "RONALDO", "Beckham"));
 
     public static void main(String[] args) {
@@ -19,8 +19,15 @@ public class Streams {
         // test.streamManipulation();
         // test.calculateAverage();
         // test.calcSumEvenOdd();
-        test.switchCase();
+        // test.switchCase();
+        test.removeDuplicates();
 
+    }
+
+    public void removeDuplicates() {
+        // nums = nums.stream().collect(Collectors.toSet()).stream().collect(Collectors.toList());
+        nums = nums.stream().distinct().collect(Collectors.toList());
+        System.out.println(nums);
     }
 
     public void calculateAverage() {
