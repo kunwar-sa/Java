@@ -16,14 +16,14 @@ public class Streams {
 	public static void main(String[] args) {
 
 		Streams test = new Streams();
-//      test.streamManipulation();
-//      test.calculateAverage();
-//      test.calcSumEvenOdd();
-//      test.switchCase();
-//    	test.removeDuplicates();
-//		test.stringStartingWithK();
-//		test.sortStrings();
-//		test.getMinMax();
+		// test.streamManipulation();
+		// test.calculateAverage();
+		// test.calcSumEvenOdd();
+		// test.switchCase();
+		// test.removeDuplicates();
+		// test.stringStartingWithK();
+		// test.sortStrings();
+		// test.getMinMax();
 		test.getSecondHighest();
 
 	}
@@ -31,11 +31,12 @@ public class Streams {
 	public void getSecondHighest() {
 		int secondLowest = nums.stream().distinct().sorted((a, b) -> a.compareTo(b)).skip(1).findFirst().orElse(null);
 		int secondHighest = nums.stream().distinct().sorted((a, b) -> b.compareTo(a)).skip(1).findFirst().orElse(null);
-//		All these will work inside sorted for descending order
-//		Integer.compare(b,  a)
-//		(a, b) -> b.compareTo(a)
-//		Comparator.reverseOrder()
-
+		/*
+		 * All these will work inside sorted for descending order
+		 * Integer.compare(b, a)
+		 * (a, b) -> b.compareTo(a)
+		 * Comparator.reverseOrder()
+		 */
 		System.out.println(secondLowest + " " + secondHighest);
 	}
 
@@ -48,13 +49,14 @@ public class Streams {
 	}
 
 	public void sortStrings() {
-//		names = names.stream().sorted().collect(Collectors.toList());
+		// names = names.stream().sorted().collect(Collectors.toList());
 		names = names.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 		System.out.println(names);
 	}
 
 	public void stringStartingWithK() {
-//		names = names.stream().filter(x -> x.startsWith("B")).collect(Collectors.toList());
+		// names = names.stream().filter(x ->
+		// x.startsWith("B")).collect(Collectors.toList());
 		long y = names.stream().filter(x -> x.startsWith("B")).count();
 		System.out.println(y);
 	}
